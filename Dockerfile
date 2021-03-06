@@ -1,6 +1,5 @@
 FROM openjdk:8-slim
-COPY . /usr/src/myapp
-WORKDIR /usr/src/myapp
-RUN javac Main.java
-CMD ["java", "Main"]
+WORKDIR /opt/db-api-for-docker
+COPY . .
+CMD ["db-api-for-docker.jar", "start"]
 EXPOSE 9999
